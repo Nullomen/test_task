@@ -13,14 +13,11 @@ exports.up = async function(knex) {
         });
         return await knex.schema.createTable('citizens', function (table) {
             table.increments('id').primary();
-            // table.integer('city_id').unsigned().notNullable();
             table.integer('city_id').notNullable().references('id').inTable('cities');
             table.string('name').notNullable();
             table.string('city').notNullable();
             table.string('district').notNullable();
             table.string('street').notNullable();
-
-            // table.foreign('city_id').references('id').inTable('cities');
         });
     } catch(e){
         console.error(`ERROR UP MIGRATION create tables: ${e}`);
