@@ -1,6 +1,6 @@
 ## Description
 
-Tasks: 
+# Tasks: 
 1. Нужно визуально показать иерархию жителей.
 
 - Москва 
@@ -38,17 +38,25 @@ Tasks:
 Идеально, если это будет докер контейнер, который мы сможем запустить у себя и сразу
 попробовать.
 
-## Development requirement:
-* express
-* postgresql
-* graphql
+# Implemented: 
+
+* Created a backend with a connected database, migrations, seeds, requests, and set endpoints.
+* Created a docker image with a database.
+* Created a front-end project with React, not fully completed, use effects work incorrectly.
+
+# What would I fix.
+
+* would add rest and unit tests.
+* fix frontend
+* error handler and sending them to the user
 
 ## Stack: 
 * express
-* Sequelize
+* knex
 * postgresql
 * docker-compose
-* graphql
+* react
+* axios
 
 ## Installation
 
@@ -77,6 +85,8 @@ $ docker-compose down -v
 # Migration management commands
 
 ```bash
+# go to directory
+$ cd ./backend
 # up migration
 $ knex migrate:latest
 # rollback migration
@@ -85,3 +95,20 @@ $ knex migrate:rollback
 $ knex seed:run
 ```
 
+# Start up server
+
+```bash
+# start as develop
+$ npm run start:dev
+# start app
+$ npm run start
+```
+
+## Running the frontend app
+
+```bash
+# go to directory frontend
+$ cd ./frontend
+# start app
+$ npm start
+```
